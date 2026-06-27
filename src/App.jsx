@@ -186,7 +186,7 @@ function Hero() {
   return (
     <section className="hero" id="home" aria-label="Introduction">
       <div className="hero__bg" aria-hidden="true">
-        <img className="hero__bg-image" src="/images/hero.jpeg" alt="Surgical Suite" loading="eager" />
+        <img className="hero__bg-image" src={`${import.meta.env.BASE_URL}images/hero.jpeg`} alt="Surgical Suite" loading="eager" />
         <div className="hero__bg-overlay"></div>
         <div className="hero__bg-vignette"></div>
       </div>
@@ -297,7 +297,7 @@ function About() {
           <div className="scroll-reveal scroll-reveal--fade-right">
             <div className="about-image">
               <div className="about-image__frame">
-                <img src="/images/doctor.jpeg" alt="Dr. Siddhant Kishan Mahato" loading="lazy" />
+                <img src={`${import.meta.env.BASE_URL}images/doctor.jpeg`} alt="Dr. Siddhant Kishan Mahato" loading="lazy" />
                 <span className="about-image__nmc">NMC No: 25037</span>
               </div>
               <div className="about-image__badge animate-float">
@@ -450,37 +450,37 @@ const treatmentsData = [
     title: 'Laparoscopic Cholecystectomy',
     cat: 'Abdominal Surgery',
     desc: 'Keyhole surgery to remove a diseased gallbladder or gallstones, minimizing scars and recovery time.',
-    img: '/images/hero.jpeg' // Reusing provided images as fallback
+    img: 'images/hero.jpeg' // Reusing provided images as fallback
   },
   {
     title: 'Laparoscopic Appendectomy',
     cat: 'Emergency Surgery',
     desc: 'Minimally invasive urgent surgical removal of the appendix for acute or chronic appendicitis.',
-    img: '/images/hero.jpeg'
+    img: 'images/hero.jpeg'
   },
   {
     title: 'Tension-Free Hernia Repair',
     cat: 'General Surgery',
     desc: 'Advanced surgical mesh reconstruction for inguinal, umbilical, femoral, and incisional hernias.',
-    img: '/images/hero.jpeg'
+    img: 'images/hero.jpeg'
   },
   {
     title: 'Laser Treatment for Piles',
     cat: 'Proctology',
     desc: 'Modern laser ablation for hemorrhoids, fissures, and fistulas, promoting rapid healing and minimal pain.',
-    img: '/images/hero.jpeg'
+    img: 'images/hero.jpeg'
   },
   {
     title: 'Varicose Veins Laser Therapy',
     cat: 'Vascular Care',
     desc: 'Endovenous laser closure of painful, swollen varicose veins under local anesthesia as a day-care procedure.',
-    img: '/images/hero.jpeg'
+    img: 'images/hero.jpeg'
   },
   {
     title: 'Day-Care Cyst & Lipoma Excision',
     cat: 'Soft Tissue Surgery',
     desc: 'Quick outpatient removal of benign skin swellings, lipomas, sebaceous cysts, and ingrown nails.',
-    img: '/images/hero.jpeg'
+    img: 'images/hero.jpeg'
   }
 ];
 
@@ -513,7 +513,7 @@ function Treatments() {
             <div key={idx} className="scroll-reveal scroll-reveal--fade-up" style={{ transitionDelay: `${idx * 80}ms` }}>
               <div className="treatment-card card card--premium">
                 <div className="treatment-card__image">
-                  <img src={item.img} alt={item.title} loading="lazy" />
+                  <img src={`${import.meta.env.BASE_URL}${item.img}`} alt={item.title} loading="lazy" />
                 </div>
                 <div className="treatment-card__body">
                   <span className="treatment-card__category">{item.cat}</span>
@@ -783,21 +783,21 @@ const blogsData = [
     cat: "Patient Guide",
     desc: "Discover how same-day surgical pathways operate, their benefits in terms of cost and infection reduction, and what to expect during your discharge process.",
     date: "June 25, 2026",
-    img: "/images/hero.jpeg"
+    img: "images/hero.jpeg"
   },
   {
     title: "Recovering from Laparoscopic Gallbladder Surgery: A Smooth Transition",
     cat: "Recovery Tips",
     desc: "Practical post-operative guides on food intake, light physical activity, and pain management for patients recovering from keyhole gallstone removals.",
     date: "May 18, 2026",
-    img: "/images/hero.jpeg"
+    img: "images/hero.jpeg"
   },
   {
     title: "Laser Proctology: Changing Colorectal Surgery Outcomes",
     cat: "Advanced Tech",
     desc: "How laser treatments for hemorrhoids and fissures have minimized surgical tissue trauma, dramatically reducing pain and healing periods.",
     date: "April 02, 2026",
-    img: "/images/hero.jpeg"
+    img: "images/hero.jpeg"
   }
 ];
 
@@ -824,7 +824,7 @@ function Blogs() {
               <article className="blog-card card card--premium">
                 <a href="#contact" className="blog-card__link">
                   <div className="blog-card__image">
-                    <img src={item.img} alt={item.title} loading="lazy" />
+                    <img src={`${import.meta.env.BASE_URL}${item.img}`} alt={item.title} loading="lazy" />
                   </div>
                   <div className="blog-card__body">
                     <span className="blog-card__category">{item.cat}</span>
