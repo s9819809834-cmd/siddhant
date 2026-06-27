@@ -49,6 +49,7 @@ function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,14 +69,11 @@ function Header() {
         <div className="container header__inner">
           <a href="#home" className="header__logo">
             <span className="header__logo-icon">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="8" fill="currentColor"></rect>
-                <path d="M18 10v16M12 16h12" stroke="#C9A96E" strokeWidth="2.5" strokeLinecap="round"></path>
-              </svg>
+              <img src={`${import.meta.env.BASE_URL}images/logo.jpeg`} alt="Dr. Siddhant Kishan Mahato Logo" style={{ width: '38px', height: '38px', borderRadius: '6px', objectFit: 'cover' }} />
             </span>
             <div className="header__logo-text">
-              <strong>Dr. Siddhant K. Mahato</strong>
-              <small>General & Laparoscopic Surgeon</small>
+              <strong>Dr. Siddhant Kishan Mahato</strong>
+              <small>Consultant General &amp; Laparoscopic Surgeon</small>
             </div>
           </a>
 
@@ -103,17 +101,13 @@ function Header() {
                 </ul>
               </li>
 
-              <li className="header__item">
-                <a href="#expertise" className="header__link">Expertise</a>
-              </li>
-
               <li 
                 className="header__item"
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
                 <a href="#treatments" className="header__link">
-                  Treatments
+                  Services
                   <svg className="header__chevron" width="12" height="12" viewBox="0 0 12 12">
                     <path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" fill="none"></path>
                   </svg>
@@ -126,20 +120,31 @@ function Header() {
                 </ul>
               </li>
 
-              <li className="header__item">
-                <a href="#research" className="header__link">Publications</a>
-              </li>
-              <li className="header__item">
-                <a href="#faqs" className="header__link">FAQs</a>
+              <li 
+                className="header__item"
+                onMouseEnter={() => setResourcesDropdownOpen(true)}
+                onMouseLeave={() => setResourcesDropdownOpen(false)}
+              >
+                <a href="#research" className="header__link">
+                  Resources
+                  <svg className="header__chevron" width="12" height="12" viewBox="0 0 12 12">
+                    <path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" fill="none"></path>
+                  </svg>
+                </a>
+                <ul className={`header__dropdown ${resourcesDropdownOpen ? 'header__dropdown--open' : ''}`}>
+                  <li><a href="#research" className="header__dropdown-link">Publications</a></li>
+                  <li><a href="#blogs" className="header__dropdown-link">Health Guides</a></li>
+                  <li><a href="#faqs" className="header__dropdown-link">FAQs Help</a></li>
+                </ul>
               </li>
             </ul>
           </nav>
 
-          <a href="tel:+9779800000000" className="header__phone">
+          <a href="tel:+9779803502830" className="header__phone">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
             </svg>
-            <span>Call Clinic</span>
+            <span>Call Now</span>
           </a>
 
           <a href="#contact" className="btn btn--accent header__cta">Book Appointment</a>
@@ -161,17 +166,17 @@ function Header() {
           <a href="#about-credentials" onClick={() => setMobileOpen(false)}>Qualifications</a>
           <a href="#why-choose" onClick={() => setMobileOpen(false)}>Care Philosophy</a>
         </div>
-        <a href="#expertise" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Areas of Expertise</a>
-        <a href="#treatments" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Treatments & Services</a>
-        <a href="#research" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Research & Publications</a>
+        <a href="#treatments" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Services</a>
+        <a href="#research" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Publications</a>
+        <a href="#blogs" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Health Guides</a>
         <a href="#faqs" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Common FAQs</a>
         <a href="#contact" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Contact Us</a>
 
-        <a href="tel:+9779800000000" className="mobile-nav__phone">
+        <a href="tel:+9779803502830" className="mobile-nav__phone">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
           </svg>
-          <span>Call: +977 9800000000</span>
+          <span>Call: +977 9803502830</span>
         </a>
         <a href="#contact" className="btn btn--accent" onClick={() => setMobileOpen(false)}>Book Appointment</a>
       </div>
@@ -280,7 +285,7 @@ function About() {
 
       <div className="container">
         <div className="section-title">
-          <span className="section-title__label">About the Doctor</span>
+          <span className="section-title__label">Professional Profile</span>
           <div className="icon-badge icon-badge--md icon-badge--default section-title__icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="medical-icon">
               <path d="M6 4v6a6 6 0 1012 0V4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
@@ -301,9 +306,9 @@ function About() {
                 <span className="about-image__nmc">NMC No: 25037</span>
               </div>
               <div className="about-image__badge animate-float">
-                <strong>MS: General Surgery</strong>
-                <span>MBBS · Day Care Surgery</span>
-                <span>Tribhuvan University Affiliated</span>
+                <strong>MS: NAIHS, TU</strong>
+                <span>Shree Birendra Hospital</span>
+                <span>Chhauni</span>
               </div>
             </div>
           </div>
@@ -311,7 +316,7 @@ function About() {
           <div className="scroll-reveal scroll-reveal--fade-left">
             <div className="about-content">
               <h3 className="about-content__name">Dr. Siddhant Kishan Mahato</h3>
-              <p className="about-content__role">Specialist in General &amp; Laparoscopic Surgery</p>
+              <p className="about-content__role">Consultant General &amp; Laparoscopic Surgeon</p>
               
               <p>
                 Dr. Siddhant Kishan Mahato is a highly trained general surgeon specializing in <strong>Day Care Surgical Procedures</strong>—advanced, minimally invasive, and routine interventions structured to allow you to walk in, receive elite surgical care, and return to the comfort of your own home the very same day.
@@ -321,15 +326,27 @@ function About() {
                 His goal is to demystify your diagnosis, outline the most effective evidence-based treatments, and utilize advanced techniques that prioritize minimal pain, rapid recovery, and absolute safety.
               </p>
 
-              <div className="about-highlights" id="about-credentials">
-                <div className="about-highlight card--premium">
-                  <h4>Academic Qualifications</h4>
-                  <p>
-                    <strong>Master of Surgery (MS) in General Surgery</strong> from Nepalese Army Institute of Health Sciences (NAIHS), affiliated with Tribhuvan University.
-                  </p>
-                  <p style={{ marginTop: '0.5rem' }}>
-                    <strong>Bachelor of Medicine, Bachelor of Surgery (MBBS)</strong> from Sun Yat-sen University, Guangzhou, China (one of China's top historic medical schools).
-                  </p>
+              <div className="about-highlights grid-2" id="about-credentials" style={{ gap: '1.25rem' }}>
+                <div className="about-highlight card card--premium" style={{ padding: '1.25rem' }}>
+                  <div className="icon-badge icon-badge--sm icon-badge--default" style={{ marginBottom: '0.75rem' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                      <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                    </svg>
+                  </div>
+                  <h4 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)', marginBottom: '0.25rem' }}>MBBS</h4>
+                  <p style={{ fontSize: '0.9rem', lineHeight: '1.4' }}><strong>Sun Yat-Sen University</strong></p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', marginTop: '0.25rem' }}>Guangzhou, China</p>
+                </div>
+                <div className="about-highlight card card--premium" style={{ padding: '1.25rem' }}>
+                  <div className="icon-badge icon-badge--sm icon-badge--default" style={{ marginBottom: '0.75rem' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </div>
+                  <h4 style={{ fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)', marginBottom: '0.25rem' }}>MS. General Surgery</h4>
+                  <p style={{ fontSize: '0.9rem', lineHeight: '1.4' }}><strong>Nepalese Army Institute of Health Sciences</strong></p>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', marginTop: '0.25rem' }}>TU, Nepal</p>
                 </div>
               </div>
 
@@ -960,11 +977,11 @@ function Contact() {
               </div>
 
               <div className="contact-details">
-                <a href="tel:+9779800000000" className="contact-detail">
+                <a href="tel:+9779803502830" className="contact-detail">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2-2.22z"></path>
+                    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2-2.22z"></path>
                   </svg>
-                  +977 9800000000
+                  +977 9803502830
                 </a>
                 <a href="mailto:info@drsiddhant.com.np" className="contact-detail">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -1004,8 +1021,8 @@ function Footer() {
         <div className="footer__grid">
           <div className="footer__logo-col">
             <div className="footer__logo">
-              <strong>Dr. Siddhant K. Mahato</strong>
-              <span>General &amp; Laparoscopic Surgeon</span>
+              <strong>Dr. Siddhant Kishan Mahato</strong>
+              <span>Consultant General &amp; Laparoscopic Surgeon</span>
             </div>
             <p className="footer__desc">
               Specialist general surgeon with daycare clinical focuses. Providing advanced surgical precision and compassionate care using modern, evidence-based daycare pathways.
@@ -1052,7 +1069,7 @@ function Footer() {
               </li>
               <li>
                 <strong>Call Consultation</strong>
-                <a href="tel:+9779800000000">+977 9800000000</a>
+                <a href="tel:+9779803502830">+977 9803502830</a>
               </li>
               <li>
                 <strong>Email Address</strong>
@@ -1083,7 +1100,7 @@ function MobileQuickActions() {
   return (
     <div className="mobile-quick-actions" aria-hidden="true">
       <div className="mobile-quick-actions__bar">
-        <a href="tel:+9779800000000" className="mobile-quick-actions__item">
+        <a href="tel:+9779803502830" className="mobile-quick-actions__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2-2.22z"></path>
           </svg>
