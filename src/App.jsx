@@ -212,8 +212,8 @@ function Hero() {
               </svg>
               Day Care Procedures
             </span>
-            <span className="hero__specialty">MS (General Surgery) - Tribhuvan Univ.</span>
-            <span className="hero__specialty">MBBS - Sun Yat-sen Univ.</span>
+            <span className="hero__specialty">MS (General Surgery) - Tribhuvan University</span>
+            <span className="hero__specialty">MBBS - Sun Yat-sen University</span>
           </div>
 
           <div className="hero__divider hero-animate" aria-hidden="true" style={{ '--delay': '0.45s' }}></div>
@@ -233,20 +233,8 @@ function Hero() {
 
           <div className="hero__stats hero-animate" style={{ '--delay': '0.8s' }}>
             <div className="hero__stat" style={{ '--stat-delay': '0s' }}>
-              <strong className="animated-counter">5+</strong>
+              <strong className="animated-counter">7+</strong>
               <span>Years of Experience</span>
-            </div>
-            <div className="hero__stat" style={{ '--stat-delay': '0.08s' }}>
-              <strong className="animated-counter">500+</strong>
-              <span>Patients Served</span>
-            </div>
-            <div className="hero__stat" style={{ '--stat-delay': '0.16s' }}>
-              <strong className="animated-counter">100%</strong>
-              <span>Same-Day Discharge</span>
-            </div>
-            <div className="hero__stat" style={{ '--stat-delay': '0.24s' }}>
-              <strong className="animated-counter">5+</strong>
-              <span>Surgical Specialties</span>
             </div>
           </div>
         </div>
