@@ -82,8 +82,8 @@ function Header() {
               <li className="header__item">
                 <a href="#home" className="header__link header__link--active">Home</a>
               </li>
-              
-              <li 
+
+              <li
                 className="header__item"
                 onMouseEnter={() => setAboutDropdownOpen(true)}
                 onMouseLeave={() => setAboutDropdownOpen(false)}
@@ -101,7 +101,7 @@ function Header() {
                 </ul>
               </li>
 
-              <li 
+              <li
                 className="header__item"
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 onMouseLeave={() => setServicesDropdownOpen(false)}
@@ -120,7 +120,7 @@ function Header() {
                 </ul>
               </li>
 
-              <li 
+              <li
                 className="header__item"
                 onMouseEnter={() => setResourcesDropdownOpen(true)}
                 onMouseLeave={() => setResourcesDropdownOpen(false)}
@@ -203,7 +203,7 @@ function Hero() {
           </span>
           <h1 className="hero-animate" style={{ '--delay': '0.2s' }}>Dr. Siddhant Kishan Mahato</h1>
           <p className="hero__designation hero-animate" style={{ '--delay': '0.3s' }}>General &amp; Laparoscopic Surgeon</p>
-          
+
           <div className="hero__specialties hero-animate" style={{ '--delay': '0.4s' }}>
             <span className="hero__specialty hero__specialty--featured">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -305,11 +305,11 @@ function About() {
             <div className="about-content">
               <h3 className="about-content__name">Dr. Siddhant Kishan Mahato</h3>
               <p className="about-content__role">Consultant General &amp; Laparoscopic Surgeon</p>
-              
+
               <p>
                 Dr. Siddhant Kishan Mahato is a highly trained general surgeon specializing in <strong>Day Care Surgical Procedures</strong>—advanced, minimally invasive, and routine interventions structured to allow you to walk in, receive elite surgical care, and return to the comfort of your own home the very same day.
               </p>
-              
+
               <p>
                 His goal is to demystify your diagnosis, outline the most effective evidence-based treatments, and utilize advanced techniques that prioritize minimal pain, rapid recovery, and absolute safety.
               </p>
@@ -433,7 +433,7 @@ function Expertise() {
                   Includes: {item.items}
                 </div>
                 <a href="#treatments" className="expertise-card__link">
-                  Learn more 
+                  Learn more
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
                   </svg>
@@ -854,8 +854,8 @@ function FAQs() {
 
         <div className="faq-list">
           {faqsData.map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`faq-item ${openIdx === idx ? 'faq-item--open' : ''}`}
             >
               <button className="faq-item__question" onClick={() => toggleFaq(idx)}>
@@ -915,11 +915,11 @@ function Contact() {
                   </svg>
                   9842750275
                 </a>
-                <a href="mailto:sidkm_104@gmail.com" className="contact-detail">
+                <a href="mailto:sidkm104@gmail.com" className="contact-detail">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
                   </svg>
-                  sidkm_104@gmail.com
+                  sidkm104@gmail.com
                 </a>
               </div>
             </div>
@@ -1002,7 +1002,7 @@ function Footer() {
               </li>
               <li>
                 <strong>Email Address</strong>
-                <a href="mailto:sidkm_104@gmail.com">sidkm_104@gmail.com</a>
+                <a href="mailto:sidkm104@gmail.com">sidkm104@gmail.com</a>
               </li>
             </ul>
           </div>
