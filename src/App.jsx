@@ -925,7 +925,15 @@ function Contact() {
             </div>
           </div>
 
-
+          <div className="scroll-reveal scroll-reveal--fade-left" style={{ transitionDelay: '150ms' }}>
+            <div className="contact-qr card" style={{ textAlign: 'center', padding: '2rem' }}>
+              <h3 style={{ marginBottom: '1rem' }}>Join Our WhatsApp Community</h3>
+              <img src={`${import.meta.env.BASE_URL}images/whatsapp_qr.png`} alt="WhatsApp Community QR Code" style={{ maxWidth: '200px', margin: '0 auto 1rem', display: 'block' }} />
+              <a href="https://chat.whatsapp.com/Dvacjsc2Wqq49a7Ofd6gpm?s=qt&p=a&mlu=4" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                Join Community
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
