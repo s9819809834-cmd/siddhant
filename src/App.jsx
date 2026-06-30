@@ -140,7 +140,7 @@ function Header() {
             </ul>
           </nav>
 
-          <a href="tel:+9779803502830" className="header__phone">
+          <a href="tel:9842750275" className="header__phone">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
             </svg>
@@ -172,11 +172,11 @@ function Header() {
         <a href="#faqs" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Common FAQs</a>
         <a href="#contact" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Contact Us</a>
 
-        <a href="tel:+9779803502830" className="mobile-nav__phone">
+        <a href="tel:9842750275" className="mobile-nav__phone">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
           </svg>
-          <span>Call: +977 9803502830</span>
+          <span>Call: 9842750275</span>
         </a>
         <a href="#contact" className="btn btn--accent" onClick={() => setMobileOpen(false)}>Book Appointment</a>
       </div>
@@ -624,7 +624,7 @@ function AppointmentCTA() {
         <div className="scroll-reveal scroll-reveal--fade-left" style={{ transitionDelay: '150ms' }}>
           <div className="appointment-cta__actions">
             <a href="#contact" className="btn btn--accent btn--glow">Book Appointment</a>
-            <a href="tel:+9779800000000" className="btn btn--outline">Call Clinic</a>
+            <a href="tel:9842750275" className="btn btn--outline">Call Clinic</a>
           </div>
         </div>
       </div>
@@ -635,22 +635,7 @@ function AppointmentCTA() {
 /* ==========================================================================
    RESEARCH & MEDICAL PUBLICATIONS
    ========================================================================== */
-const researchData = [
-  {
-    year: '2025',
-    journal: 'Nepalese Journal of Surgery',
-    title: 'Outcomes of Day-Care Laparoscopic Cholecystectomy in a Tertiary Medical Centre in Nepal: A Observational Study',
-    authors: 'Siddhant Kishan Mahato, Ram Kumar Shrestha, Anil Basnet',
-    desc: 'Evaluating patient outcomes, readmission rates, and safety records for day-care laparoscopic cholecystectomies performed within 12-hour pathways in Nepal.'
-  },
-  {
-    year: '2024',
-    journal: 'Journal of Surgical Case Reports',
-    title: 'Laparoscopic Repair of Giant Diaphragmatic Hernia: A Case Series from Kathmandu',
-    authors: 'Siddhant Kishan Mahato, et al.',
-    desc: 'Presenting surgical management details and recovery outcomes of laparoscopy repairs for congenital diaphragmatic hernias in adults.'
-  }
-];
+const researchData = [];
 
 function Research() {
   return (
@@ -700,28 +685,7 @@ function Research() {
 /* ==========================================================================
    PATIENT STORIES / TESTIMONIALS
    ========================================================================== */
-const testimonialsData = [
-  {
-    stars: 5,
-    text: "I was extremely nervous about my hernia surgery, but Dr. Siddhant explained everything so clearly. I walked into the clinic in the morning and was back home in the evening. Minimal pain and exceptional care! Highly recommended.",
-    author: "Ramesh Sharma, Hernia Patient"
-  },
-  {
-    stars: 5,
-    text: "Excellent surgeon! My gallbladder operation was done laparoscopically. The incisions were so small, and I recovered within a few days. Thank you Dr. Siddhant for your empathy and dedication.",
-    author: "Prerana Thapa, Gallbladder Surgery"
-  },
-  {
-    stars: 5,
-    text: "The best doctor for piles laser treatment. I was back to my normal work within 2 days with virtually no pain. Very professional, highly communicative.",
-    author: "Sabin Shrestha, Laser Proctology"
-  },
-  {
-    stars: 5,
-    text: "Genuine, patient-first care philosophy. Demystifies everything and doesn't rush you. I received excellent outpatient cyst excision care.",
-    author: "Anju Mahat, Soft Tissue Excision"
-  }
-];
+const testimonialsData = [];
 
 function Testimonials() {
   return (
@@ -739,16 +703,7 @@ function Testimonials() {
           <p>Real experiences from patients who underwent daycare and general surgery under Dr. Mahato.</p>
         </div>
 
-        <div className="google-reviews-bar">
-          <p className="google-reviews-bar__rating">
-            <span className="google-reviews-bar__star">★</span>
-            <span>5.0 · Google Verified Reviews</span>
-          </p>
-          <div className="google-reviews-bar__actions">
-            <a href="#contact" className="btn btn--outline-dark btn--sm">View Reviews on Google</a>
-            <a href="#contact" className="btn btn--primary btn--sm">Write a Review</a>
-          </div>
-        </div>
+
 
         <div className="reviews-carousel" role="list">
           {testimonialsData.map((item, idx) => (
@@ -943,18 +898,7 @@ function Contact() {
         <div className="contact-grid">
           <div className="scroll-reveal scroll-reveal--fade-right">
             <div className="contact-info">
-              <div className="contact-card card">
-                <h3>Surgical Consultation Clinic</h3>
-                <p className="contact-card__role">Lead General Surgeon</p>
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="contact-card__address"
-                >
-                  Kathmandu, Nepal (Clinical location details on request)
-                </a>
-              </div>
+
 
               <div className="contact-card card">
                 <h3>Academic &amp; Training Pedigree</h3>
@@ -965,34 +909,23 @@ function Contact() {
               </div>
 
               <div className="contact-details">
-                <a href="tel:+9779803502830" className="contact-detail">
+                <a href="tel:9842750275" className="contact-detail">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2-2.22z"></path>
                   </svg>
-                  +977 9803502830
+                  9842750275
                 </a>
-                <a href="mailto:info@drsiddhant.com.np" className="contact-detail">
+                <a href="mailto:sidkm_104@gmail.com" className="contact-detail">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
                   </svg>
-                  info@drsiddhant.com.np
+                  sidkm_104@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="scroll-reveal scroll-reveal--fade-left" style={{ transitionDelay: '150ms' }}>
-            {/* Embedded static Map placeholder or generic interactive map */}
-            <div className="contact-map">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31625953046!2d85.28493299719308!3d27.70895594454795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1b545d9757!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Kathmandu Clinic Map Location"
-              ></iframe>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
@@ -1057,11 +990,11 @@ function Footer() {
               </li>
               <li>
                 <strong>Call Consultation</strong>
-                <a href="tel:+9779803502830">+977 9803502830</a>
+                <a href="tel:9842750275">9842750275</a>
               </li>
               <li>
                 <strong>Email Address</strong>
-                <a href="mailto:info@drsiddhant.com.np">info@drsiddhant.com.np</a>
+                <a href="mailto:sidkm_104@gmail.com">sidkm_104@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -1088,7 +1021,7 @@ function MobileQuickActions() {
   return (
     <div className="mobile-quick-actions" aria-hidden="true">
       <div className="mobile-quick-actions__bar">
-        <a href="tel:+9779803502830" className="mobile-quick-actions__item">
+        <a href="tel:9842750275" className="mobile-quick-actions__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.25 1.01l-2.2-2.22z"></path>
           </svg>
