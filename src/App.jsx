@@ -927,11 +927,23 @@ function Contact() {
 
           <div className="scroll-reveal scroll-reveal--fade-left" style={{ transitionDelay: '150ms' }}>
             <div className="contact-qr card" style={{ textAlign: 'center', padding: '2rem' }}>
-              <h3 style={{ marginBottom: '1rem' }}>Join Our WhatsApp Community</h3>
-              <img src={`${import.meta.env.BASE_URL}images/whatsapp_qr.png`} alt="WhatsApp Community QR Code" style={{ maxWidth: '200px', margin: '0 auto 1rem', display: 'block' }} />
-              <a href="https://chat.whatsapp.com/Dvacjsc2Wqq49a7Ofd6gpm?s=qt&p=a&mlu=4" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-                Join Community
-              </a>
+              <h3 style={{ marginBottom: '2rem' }}>Join our WhatsApp</h3>
+              <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <div style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+                  <h4 style={{ marginBottom: '1rem' }}>Group</h4>
+                  <img src={`${import.meta.env.BASE_URL}images/whatsapp_qr.png`} alt="WhatsApp Group QR Code" style={{ maxWidth: '100%', margin: '0 auto 1rem', display: 'block' }} />
+                  <a href="https://chat.whatsapp.com/Dvacjsc2Wqq49a7Ofd6gpm?s=qt&p=a&mlu=4" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                    Join Group
+                  </a>
+                </div>
+                <div style={{ flex: '1 1 200px', maxWidth: '250px' }}>
+                  <h4 style={{ marginBottom: '1rem' }}>Community</h4>
+                  <img src={`${import.meta.env.BASE_URL}images/whatsapp_group_qr.png`} alt="WhatsApp Community QR Code" style={{ maxWidth: '100%', margin: '0 auto 1rem', display: 'block' }} />
+                  <a href="https://chat.whatsapp.com/JIqBKGUlHwmLLiDk9AjbLN" target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                    Join Community
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -957,14 +969,17 @@ function Footer() {
               Specialist general surgeon with daycare clinical focuses. Providing advanced surgical precision and compassionate care using modern, evidence-based daycare pathways.
             </p>
             <div className="footer__social">
-              <a href="#" aria-label="Facebook">
-                <span>FB</span>
+              <a href="https://www.facebook.com/share/1HzmMd6xTN/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
               </a>
-              <a href="#" aria-label="LinkedIn">
-                <span>LN</span>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <span>TW</span>
+              <a href="https://www.linkedin.com/in/siddhant-kishan-mahato-b0a445344?utm_source=share_via&utm_content=profile&utm_medium=member_android" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
               </a>
             </div>
           </div>
@@ -1013,9 +1028,7 @@ function Footer() {
           <p className="footer__disclaimer">
             Disclaimer: The health information on this clinical website is provided for educational and introductory purposes only. It is not intended to replace direct professional medical diagnostics, surgical consultations, or personalized care plans.
           </p>
-          <div className="footer__powered">
-            Created with medical care standard · Inspired by Birendra Bhagat Portfolio
-          </div>
+
         </div>
       </div>
     </footer>
