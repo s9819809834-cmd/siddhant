@@ -355,6 +355,7 @@ const expertiseData = [
     title: 'Day Care & Soft Tissue Procedures',
     desc: 'Designed for rapid recovery with a focus on optimal cosmetic outcomes and same-day discharge.',
     items: 'Lipomas, sebaceous cysts, abscess drainage, burn care, and nail excisions.',
+    extendedDesc: 'Our Day Care Surgery unit focuses on providing high-quality, minimally invasive interventions that allow patients to return home the very same day. We prioritize advanced wound care and precise cosmetic outcomes for minor excisions, ensuring minimal scarring and accelerated healing.',
     iconSvg: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -366,6 +367,7 @@ const expertiseData = [
     title: 'Abdominal & General Surgery',
     desc: 'Comprehensive hernia repairs, gallbladder stone management, and acute emergency surgeries.',
     items: 'Hernia repairs, gallbladder stones (cholecystitis), appendectomy, and bowel operations.',
+    extendedDesc: 'We offer definitive surgical management for a wide spectrum of abdominal conditions. Utilizing both traditional and advanced laparoscopic approaches, we ensure comprehensive repairs for hernias and effective removal of infected gallbladders with an emphasis on patient safety and long-term recurrence prevention.',
     iconSvg: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 4h16v16H4z" />
@@ -377,6 +379,7 @@ const expertiseData = [
     title: 'Proctology & Vascular Care',
     desc: 'Modern and specialized procedures for highly sensitive colorectal and vascular conditions.',
     items: 'Laser treatment for piles (hemorrhoids), anal fissures, fistulas, and varicose veins.',
+    extendedDesc: 'Specializing in delicate proctological and vascular conditions, we leverage cutting-edge laser technology to provide virtually painless treatments for hemorrhoids and fistulas. This modern approach dramatically reduces recovery time, bleeding, and postoperative discomfort compared to traditional methods.',
     iconSvg: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -388,6 +391,7 @@ const expertiseData = [
     title: 'Urology & Men\'s Health',
     desc: 'Comprehensive diagnostics and repairs for renal stones, scrotal, and penile conditions.',
     items: 'Kidney stones, prostate conditions, hydrocele, circumcision, and testicular torsion.',
+    extendedDesc: 'Providing discreet and expert care for urological conditions, from stone management to delicate scrotal surgeries. We focus on preserving function and providing prompt relief for acute issues like torsion, as well as definitive care for hydroceles and prostate-related symptoms.',
     iconSvg: (
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2" />
@@ -397,8 +401,48 @@ const expertiseData = [
 ];
 
 function Expertise() {
+  const [selectedExpertise, setSelectedExpertise] = useState(null);
+  const [displayData, setDisplayData] = useState(expertiseData[0]);
+  const [contentHeight, setContentHeight] = useState(0);
+  
+  const detailsRef = useRef(null);
+  const contentRef = useRef(null);
+  
+  useEffect(() => {
+    if (selectedExpertise !== null && contentRef.current) {
+      // Small delay to ensure content is fully rendered before measuring
+      setTimeout(() => {
+        if (contentRef.current) {
+          setContentHeight(contentRef.current.scrollHeight);
+        }
+      }, 50);
+    } else {
+      setContentHeight(0);
+    }
+  }, [selectedExpertise, displayData]);
+  
+  const handleLearnMore = (idx, e) => {
+    e.preventDefault();
+    if (selectedExpertise === idx) {
+      setSelectedExpertise(null);
+    } else {
+      setDisplayData(expertiseData[idx]);
+      setSelectedExpertise(idx);
+      
+      // Smooth scroll slightly down after expanding
+      setTimeout(() => {
+        if (detailsRef.current) {
+          const yOffset = -80; // Account for sticky header
+          const element = detailsRef.current;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 50);
+    }
+  };
+
   return (
-    <section className="section" id="expertise">
+    <section className="section" id="expertise" style={{ paddingBottom: selectedExpertise !== null ? '0' : undefined }}>
       <div className="section-decoration section-decoration--left" aria-hidden="true">
         <svg className="section-decoration__blob" viewBox="0 0 200 200" fill="none">
           <path d="M45.5,-52.3C57.8,-40.2 66.5,-24.5 68.9,-7.8C71.3,8.9 67.4,26.6 57.8,39.8C48.2,53 32.9,61.7 16.4,65.8C-0.1,69.9,-17.7,69.4,-32.1,61.8C-46.5,54.2,-57.7,39.5,-63.4,22.8C-69.1,6.1,-69.3,-12.6,-62.1,-28.4C-54.9,-44.2,-40.3,-57.1,-24.2,-62.8C-8.1,-68.5,9.5,-67,24.8,-59.5C40.1,-52,53.2,-38.5 45.5,-52.3Z" transform="translate(100 100)" fill="currentColor"></path>
@@ -423,26 +467,88 @@ function Expertise() {
         <div className="grid-4 expertise-grid">
           {expertiseData.map((item, idx) => (
             <div key={idx} className="scroll-reveal scroll-reveal--fade-up" style={{ transitionDelay: `${idx * 100}ms` }}>
-              <div className="expertise-card card card--premium">
+              <div className="expertise-card card card--premium" style={{ border: selectedExpertise === idx ? '2px solid var(--primary)' : undefined }}>
                 <div className="icon-badge icon-badge--md icon-badge--default expertise-card__icon">
                   {item.iconSvg}
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
-                <div style={{ fontSize: '0.8rem', color: 'var(--accent)', marginTop: '0.75rem', fontWeight: 650 }}>
-                  Includes: {item.items}
-                </div>
-                <a href="#treatments" className="expertise-card__link">
-                  Learn more
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
+                <button 
+                  className="expertise-card__link" 
+                  onClick={(e) => handleLearnMore(idx, e)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'inherit', fontSize: '0.9rem', color: 'var(--primary)', fontWeight: 600 }}
+                  aria-expanded={selectedExpertise === idx}
+                >
+                  {selectedExpertise === idx ? 'Close Details' : 'Learn more'}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ transform: selectedExpertise === idx ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Detailed Expertise Section (Slides down below the grid smoothly) */}
+      <div 
+        ref={detailsRef}
+        style={{
+          marginTop: selectedExpertise !== null ? '3rem' : '0',
+          height: `${contentHeight}px`,
+          backgroundColor: 'rgba(0, 133, 146, 0.03)',
+          borderTop: selectedExpertise !== null ? '1px solid rgba(0, 133, 146, 0.1)' : '1px solid transparent',
+          borderBottom: selectedExpertise !== null ? '1px solid rgba(0, 133, 146, 0.1)' : '1px solid transparent',
+          transition: 'height 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.5s ease',
+          overflow: 'hidden'
+        }}
+      >
+        <div ref={contentRef}>
+          <div 
+            style={{
+              opacity: selectedExpertise !== null ? 1 : 0,
+              transform: selectedExpertise !== null ? 'translateY(0)' : 'translateY(-20px)',
+              transition: 'opacity 0.4s ease-out 0.2s, transform 0.4s ease-out 0.2s',
+              padding: '4rem 1rem'
+            }}
+            className="container"
+          >
+              <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div className="icon-badge icon-badge--lg icon-badge--default">
+                    {displayData.iconSvg}
+                  </div>
+                  <h3 style={{ fontSize: '2rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)' }}>
+                    {displayData.title}
+                  </h3>
+                </div>
+                
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-dark)', marginBottom: '2rem' }}>
+                  {displayData.extendedDesc}
+                </p>
+                
+                <div className="card" style={{ backgroundColor: 'white', padding: '2rem' }}>
+                  <h4 style={{ color: 'var(--accent)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 11 12 14 22 4"></polyline>
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    Procedures & Treatments Included
+                  </h4>
+                  <p style={{ lineHeight: '1.6', fontSize: '1rem' }}>
+                    {displayData.items}
+                  </p>
+                </div>
+
+                <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                  <button className="btn btn--outline" onClick={() => setSelectedExpertise(null)}>
+                    Close Detailed View
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
   );
 }
